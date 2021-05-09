@@ -14,7 +14,7 @@ public class Question {
     @Column(name = "id_question")
     private Integer idQuestion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_survey")
     @JsonIgnore
     private Survey survey;

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/preguntas")
+@RequestMapping("/questions")
 public class QuestionController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class QuestionController {
      *
      * @return objects question
      */
-    @GetMapping("/todas")
+    @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Question> findAll() {
         return questionService.findAll();

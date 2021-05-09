@@ -21,7 +21,7 @@ public class FeedbackController {
      *
      * @return objects feedback
      */
-    @GetMapping("/todas")
+    @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Feedback> getAll() {
         return feedbackService.findAll();

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/respuestas")
+@RequestMapping("/answer")
 public class AnswerController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class AnswerController {
      * Get: List all answers
      * @return objects question
      */
-    @GetMapping("/todas")
+    @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<Answer> getAll() {
         return answerService.findAll();

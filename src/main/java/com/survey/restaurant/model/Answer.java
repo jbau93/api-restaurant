@@ -13,8 +13,8 @@ public class Answer {
     @Column(name = "id_answer")
     private Integer idAnswer;
 
-    @ManyToOne
-    @JoinColumn(name = "id_question")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_question",referencedColumnName = "id_question")
     @JsonIgnore
     private Question question;
 
