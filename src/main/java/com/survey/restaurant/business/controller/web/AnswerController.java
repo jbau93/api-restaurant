@@ -21,6 +21,16 @@ public class AnswerController {
     private AnswerService answerService;
 
     /**
+     * Get: List all answers
+     * @return objects question
+     */
+    @GetMapping("/todas")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Answer> getAll() {
+        return answerService.findAll();
+    }
+
+    /**
      * Post: stores a answer object
      *
      * @return the answer object stored

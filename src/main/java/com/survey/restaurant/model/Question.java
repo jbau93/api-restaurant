@@ -20,7 +20,7 @@ public class Question {
     private Survey survey;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-    @JsonIgnore
+    //@JsonIgnore
     private List<Answer> answers;
 
     private String description;
