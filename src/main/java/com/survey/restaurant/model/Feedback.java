@@ -1,5 +1,7 @@
 package com.survey.restaurant.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,10 +13,12 @@ public class Feedback {
     @Column(name = "id_feedback")
     private Integer idFeedback;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_question")
     private Question question;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_answer")
     private Answer answer;
 
     public Question getQuestion() {
