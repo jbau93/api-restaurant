@@ -15,7 +15,6 @@ public class Survey {
     private Integer idSurvey;
 
     @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Question> questions;
 
     public List<Question> getQuestions() {
