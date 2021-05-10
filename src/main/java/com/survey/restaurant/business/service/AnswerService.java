@@ -23,6 +23,10 @@ public class AnswerService {
         return answerRepository.findByQuestion(question);
     }
 
+    public Optional<Answer> findById(Integer idAnswer) {
+        return answerRepository.findById(idAnswer);
+    }
+
     public Optional<Answer> getAnswer(Integer idAnswer) {
         return answerRepository.findById(idAnswer);
     }

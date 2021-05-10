@@ -13,20 +13,12 @@ public class Answer {
     @Column(name = "id_answer")
     private Integer idAnswer;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_question",referencedColumnName = "id_question")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_question")
     @JsonIgnore
     private Question question;
 
     private String description;
-
-    public Integer getIdAnswer() {
-        return idAnswer;
-    }
-
-    public void setIdAnswer(Integer idAnswer) {
-        this.idAnswer = idAnswer;
-    }
 
     public String getDescription() {
         return description;
@@ -40,7 +32,7 @@ public class Answer {
         return question;
     }
 
-    public void setQuestion(Question idQuestion) {
+    public void setQuestion(Question question) {
         this.question = question;
     }
 

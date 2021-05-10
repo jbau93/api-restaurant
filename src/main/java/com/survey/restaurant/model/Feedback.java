@@ -14,11 +14,11 @@ public class Feedback {
     private Integer idFeedback;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_question")
+    @JoinColumn(name = "id_question", referencedColumnName = "id_question")
     private Question question;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_answer")
+    @JoinColumn(name = "id_answer", referencedColumnName = "id_answer")
     private Answer answer;
 
     public Question getQuestion() {
