@@ -26,12 +26,17 @@ public class FeedbackTest {
     @Test
     public void testCreate() {
         Feedback feedback = new Feedback();
-        Question question = questionService.findById(1).get();
+        Question question = questionService.findById(5).get();
         Answer answer = answerService.findById(15).get();
 
         feedback.setQuestion(question);
         feedback.setAnswer(answer);
         feedbackService.save(feedback);
         //Assertions.assertNotNull(feedbackService.findById(1).get());
+    }
+
+    @Test
+    public void testSingleFeedback(){
+        Feedback feedback = feedbackService.findById(3).get();
     }
 }
